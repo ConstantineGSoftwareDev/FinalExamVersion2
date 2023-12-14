@@ -104,6 +104,11 @@ public class MainController implements Initializable {
         CarTableView.setItems(CarsInObList);
         header.setText(DataAccessLayer.getInventoryData().getDealer());
         addressLabel.setText(DataAccessLayer.getInventoryData().getAddress());
-
+        Integer numberOfCars = DataAccessLayer.getInventoryData().getInventory().stream().toList().size();
+        updateNumberOfCars(numberOfCars);
+    }
+    private void updateNumberOfCars(Integer numberOfCars)
+    {
+        numberOfCarsLabel.setText("Number of cars: "+ numberOfCars.toString());
     }
 }
