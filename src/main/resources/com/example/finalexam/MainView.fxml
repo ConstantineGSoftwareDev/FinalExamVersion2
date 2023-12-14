@@ -18,7 +18,7 @@
    <children>
       <Label fx:id="header" prefHeight="34.0" prefWidth="373.0" text="Dealership to Insert" />
       <Label fx:id="addressLabel" prefHeight="20.0" prefWidth="231.0" text="Address to Insert" />
-      <TableView prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="CarTableView" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="yearColumn" prefWidth="81.60000991821289" text="Year" />
           <TableColumn fx:id="modelColumn" prefWidth="77.60000610351562" text="Model" />
