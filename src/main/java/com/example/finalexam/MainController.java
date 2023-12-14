@@ -10,10 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.text.NumberFormat;
-import java.util.List;
-import java.util.Locale;
-import java.util.OptionalDouble;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class MainController implements Initializable {
 
@@ -109,13 +106,18 @@ public class MainController implements Initializable {
         Double totalPrice = DataAccessLayer.getInventoryData().getInventory().stream()
                 .mapToDouble(Car::getPrice) // Assuming getPrice returns a double
                 .sum();
-
-        updateNumberOfCars(numberOfCars,totalPrice);
+        OptionalDouble averageEngineSize = DataAccessLayer.getInventoryData().getInventory().stream()
+                .mapToDouble(Car::getEngineSize)
+                .average();
+        updateNumberOfCars(numberOfCars,totalPrice,averageEngineSize);
     }
-    private void updateNumberOfCars(Integer numberOfCars, Double TotalValue)
+    private void updateNumberOfCars(Integer numberOfCars, Double TotalValue,OptionalDouble averageEngineSize)
     {
         numberOfCarsLabel.setText("Number of cars: "+ numberOfCars.toString());
         NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
         totalValueLabel.setText("Value of Cars in table: " + currencyFormat.format(TotalValue));
+        Double averageEng = averageEngineSize.getAsDouble();
+        averageEngineSizeLabel.setText("Average Engine Size: "+averageEng.toString() );
+
     }
 }
