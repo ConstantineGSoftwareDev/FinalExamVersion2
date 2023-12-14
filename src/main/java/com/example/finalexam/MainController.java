@@ -120,7 +120,7 @@ public class MainController implements Initializable {
         {
             DropdownPopulator.add(toCheck.getMODEL());
         }
-        filterDropdown.getItems().addAll(DropdownPopulator.stream().toList());
+        filterDropdown.getItems().addAll(DropdownPopulator.stream().sorted().toList());
     }
     private void updateNumberOfCars(Integer numberOfCars, Double TotalValue,OptionalDouble averageEngineSize)
     {
