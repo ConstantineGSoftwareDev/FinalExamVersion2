@@ -64,4 +64,14 @@ public class Car {
     public void setTransmission(String transmission) {
         this.transmission = transmission;
     }
+    public boolean contains(String searchTerm) {
+        String searchTermLower = searchTerm.toLowerCase();
+        Boolean returnVal = false;
+        returnVal = Year.toString().toLowerCase().contains(searchTermLower)
+                || MODEL.toLowerCase().contains(searchTermLower)
+                || fuelType.toLowerCase().contains(searchTermLower)
+                || Price.toString().toLowerCase().contains(searchTermLower)
+                || transmission.toLowerCase().contains(searchTermLower);
+        return  returnVal;
+    }
 }

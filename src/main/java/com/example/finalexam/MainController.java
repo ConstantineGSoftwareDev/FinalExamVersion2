@@ -33,7 +33,7 @@ public class MainController implements Initializable {
     private Label numberOfCarsLabel;
 
     @FXML
-    private ComboBox<?> filterDropdown;
+    private ComboBox<String> filterDropdown;
 
     @FXML
     private TextField filterTextBox;
@@ -110,6 +110,17 @@ public class MainController implements Initializable {
                 .mapToDouble(Car::getEngineSize)
                 .average();
         updateNumberOfCars(numberOfCars,totalPrice,averageEngineSize);
+
+        filterTextBox.textProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("textfield changed from " + oldValue + " to " + newValue);
+            filterCar(newValue);
+        });
+        Set<String> DropdownPopulator = new HashSet<>();
+        for(Car toCheck : DataAccessLayer.getInventoryData().getInventory().stream().sorted(Comparator.comparing(Car::getMODEL)).toList())
+        {
+            DropdownPopulator.add(toCheck.getMODEL());
+        }
+        filterDropdown.getItems().addAll(DropdownPopulator.stream().toList());
     }
     private void updateNumberOfCars(Integer numberOfCars, Double TotalValue,OptionalDouble averageEngineSize)
     {
@@ -118,6 +129,12 @@ public class MainController implements Initializable {
         totalValueLabel.setText("Value of Cars in table: " + currencyFormat.format(TotalValue));
         Double averageEng = averageEngineSize.getAsDouble();
         averageEngineSizeLabel.setText("Average Engine Size: "+averageEng.toString() );
-
+    }
+    private void filterCar(String newVale)
+    {
+        CarTableView.getItems().clear();
+        CarTableView.getItems().addAll(
+                DataAccessLayer.getInventoryData().getInventory().stream()
+                        .filter(Car -> Car.contains(newVale)).toList());
     }
 }
