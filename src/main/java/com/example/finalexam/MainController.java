@@ -136,5 +136,14 @@ public class MainController implements Initializable {
         CarTableView.getItems().addAll(
                 DataAccessLayer.getInventoryData().getInventory().stream()
                         .filter(Car -> Car.contains(newVale)).toList());
+       List<Car> MyData =  CarTableView.getItems().stream().toList();
+        Integer numberOfCars = MyData.stream().toList().size();
+        Double totalPrice = MyData.stream()
+                .mapToDouble(Car::getPrice) // Assuming getPrice returns a double
+                .sum();
+        OptionalDouble averageEngineSize = MyData.stream()
+                .mapToDouble(Car::getEngineSize)
+                .average();
+        updateNumberOfCars(numberOfCars,totalPrice,averageEngineSize);
     }
 }
