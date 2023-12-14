@@ -12,6 +12,7 @@ import java.net.URL;
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
+import java.util.OptionalDouble;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -105,10 +106,16 @@ public class MainController implements Initializable {
         header.setText(DataAccessLayer.getInventoryData().getDealer());
         addressLabel.setText(DataAccessLayer.getInventoryData().getAddress());
         Integer numberOfCars = DataAccessLayer.getInventoryData().getInventory().stream().toList().size();
-        updateNumberOfCars(numberOfCars);
+        Double totalPrice = DataAccessLayer.getInventoryData().getInventory().stream()
+                .mapToDouble(Car::getPrice) // Assuming getPrice returns a double
+                .sum();
+
+        updateNumberOfCars(numberOfCars,totalPrice);
     }
-    private void updateNumberOfCars(Integer numberOfCars)
+    private void updateNumberOfCars(Integer numberOfCars, Double TotalValue)
     {
         numberOfCarsLabel.setText("Number of cars: "+ numberOfCars.toString());
+        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
+        totalValueLabel.setText("Value of Cars in table: " + currencyFormat.format(TotalValue));
     }
 }

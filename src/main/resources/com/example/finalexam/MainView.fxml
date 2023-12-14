@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="646.0" prefWidth="866.0" spacing="20.0" stylesheets="@../../../styles.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="com.example.finalexam.MainController">
+<VBox alignment="CENTER" prefHeight="662.0" prefWidth="1012.0" spacing="20.0" stylesheets="@../../../styles.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="com.example.finalexam.MainController">
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
@@ -21,12 +21,12 @@
       <TableView fx:id="CarTableView" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="yearColumn" prefWidth="81.60000991821289" text="Year" />
-          <TableColumn fx:id="modelColumn" prefWidth="77.60000610351562" text="Model" />
-            <TableColumn fx:id="fueltypeColumn" prefWidth="110.40000915527344" text="Fuel Type" />
-            <TableColumn fx:id="priceColumn" prefWidth="167.199951171875" text="Price" />
-            <TableColumn fx:id="mpgColumn" prefWidth="76.00006103515625" text="MPG" />
-            <TableColumn fx:id="engineSizeColumn" prefWidth="150.39996337890625" text="Engine Size" />
-            <TableColumn fx:id="TransmissionSizeColumn" prefWidth="158.40008544921875" text="Transmission" />
+          <TableColumn fx:id="modelColumn" prefWidth="94.39999389648438" text="Model" />
+            <TableColumn fx:id="fueltypeColumn" prefWidth="144.80003356933594" text="Fuel Type" />
+            <TableColumn fx:id="priceColumn" prefWidth="153.60003662109375" text="Price" />
+            <TableColumn fx:id="mpgColumn" prefWidth="119.20001220703125" text="MPG" />
+            <TableColumn fx:id="engineSizeColumn" prefWidth="162.4000244140625" text="Engine Size" />
+            <TableColumn fx:id="TransmissionSizeColumn" prefWidth="215.2000732421875" text="Transmission" />
         </columns>
       </TableView>
       <GridPane prefHeight="60.0" prefWidth="599.0">
