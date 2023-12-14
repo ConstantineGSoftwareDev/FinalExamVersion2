@@ -45,4 +45,20 @@ public class DataAccessLayer {
         });
         readThread.start();
     }
+
+    public static Thread getReadThread() {
+        return readThread;
+    }
+
+    public static void setReadThread(Thread readThread) {
+        DataAccessLayer.readThread = readThread;
+    }
+
+    public static Dealership getInventoryData() {
+        return inventoryData;
+    }
+
+    public static void setInventoryData(Dealership inventoryData) {
+        DataAccessLayer.inventoryData = inventoryData;
+    }
 }

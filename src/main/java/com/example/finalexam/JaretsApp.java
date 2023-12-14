@@ -11,8 +11,8 @@ public class JaretsApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(JaretsApp.class.getResource("MainView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load(), 1000, 800);
+        stage.setTitle("Audi's for Sale");
         stage.setScene(scene);
         stage.show();
     }

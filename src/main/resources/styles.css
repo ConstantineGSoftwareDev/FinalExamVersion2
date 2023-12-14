@@ -1,0 +1,91 @@
+.root{
+    -fx-font-size: 22px;
+    -fx-font-family: sans-serif;
+    -fx-background-color: #0e0e0e;
+    -fx-background-image: url("computer.png");
+    -fx-background-size: cover;
+}
+
+.table-view .column-header .label{
+    -fx-text-fill: #332e31;
+}
+#header {
+    -fx-font-size: 40px;
+    -fx-text-fill: orange;
+}
+#LoginButton
+{
+    -fx-text-fill: White;
+}
+
+.label{
+    -fx-text-fill: white;
+}
+
+.button{
+    -fx-border-radius: 20pt;
+    -fx-background-radius: 20pt;
+    -fx-text-fill: Black;
+}
+.choice-box
+{
+    -fx-text-fill: Black;
+}
+
+.choice-box > .label
+{
+    -fx-text-fill: black;
+}
+.choice-box .menu-item > .label
+{
+    -fx-text-fill: black;
+}
+.chart-legend-item
+{
+    -fx-text-fill: #191970;
+}
+
+.chart-pie-label
+{ /*this is what you need for labels*/
+    -fx-fill: white;
+    -fx-font-size: 1em;
+}
+
+.chart-legend {
+    -fx-background-color: #f2f2f2; /* Background color for the legend */
+    -fx-border-color: #999999; /* Border color for the legend */
+    -fx-border-width: 1px; /* Border width for the legend */
+}
+
+.chart-legend-item-symbol {
+}
+
+.chart-legend-item {
+    -fx-text-fill: #333333; /* Text color for the legend items */
+}
+
+.chart-legend {
+    -fx-background-color: #f2f2f2; /* Background color for the legend */
+    -fx-border-color: #999999; /* Border color for the legend */
+    -fx-border-width: 1px; /* Border width for the legend */
+}
+
+.chart-legend-item-symbol {
+}
+
+.chart-legend-item {
+    -fx-text-fill: #333333; /* Text color for the legend items */
+}
+
+.chart-axis-label {
+    -fx-text-fill: white; /* Set the text color to white */
+}
+.axis {
+    -fx-tick-label-fill: white;
+}
+This example creates a LineChart and styles its legend using CSS. You can customize the styles in the CSS file to achieve the desired appearance for the legend of your LineChart.
+
+
+
+
+
